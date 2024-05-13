@@ -4,35 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
 
-    public Character[] characters;
+    [Header("#Game Control")]
+    public bool isLive;
 
-    public Character currentCharacter;
+    [Header("#Player Info")]
+    public int playerId;
+    public string playerName;
 
-    private void Awake()
+    public void GameStart()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-        DontDestroyOnLoad(gameObject);
-    }
-    private void Start()
-    {
-        if(characters.Length > 0 && currentCharacter == null)
-        {
-            currentCharacter = characters[0];
-        }
+        isLive = true;
     }
 
-    public void SetCharacter(Character character)
+    public void GameStart(int id)
     {
-
+        playerId = id;
     }
+
 }
