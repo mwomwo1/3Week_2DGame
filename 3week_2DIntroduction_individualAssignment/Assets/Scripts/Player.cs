@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
+using Unity.Jobs;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum PlayerJob
     {
-        
+        Knight,
+        Monster
     }
 
-    // Update is called once per frame
-    void Update()
+    public RuntimeAnimatorController[] animCon;
+
+    Rigidbody2D rigid;
+    SpriteRenderer spriter;
+    Animator anim;
+
+    //Player -> unitiolize
+
+    void OnEnalbe()
     {
-        
+        anim.runtimeAnimatorController = animCon[GameManager.instance.playerId];
     }
+
 }

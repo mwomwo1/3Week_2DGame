@@ -12,14 +12,21 @@ public class GameManager : MonoBehaviour
     public int playerId;
     public string playerName;
 
-    public void GameStart()
+    public static GameManager instance;
+    public Player player;
+
+    private void Awake()
     {
-        isLive = true;
+        instance = this;
     }
 
-    public void GameStart(int id)
-    {
-        playerId = id;
-    }
+    //public void GameStart(int id)
+    //{
+    //    playerId = id;
+    //    Debug.Log("id입력 ");
+    //    player.gameObject.SetActive(true);
+    //    Debug.Log("player 값 변경");
+    //    isLive = true;
 
+    //}
 }
